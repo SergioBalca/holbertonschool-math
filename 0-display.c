@@ -20,6 +20,9 @@ if (!c.re && c.im)
 }
 if (c.re && c.im)
 {
-	printf("%0.0f + %0.0fi\n", c.re, c.im);
+	if (c.im > 0)
+		printf("%0.0f + %0.0fi\n", c.re, c.im);
+	else
+		printf("%0.0f - %0.0fi\n", c.re, -c.im);
 }
 }
