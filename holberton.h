@@ -2,20 +2,21 @@
 #define MAIN_H
 #include <stdio.h>
 /**
- * struct dog- Defines the name, age and owner of a dog
- * @name: name of the dog
- * @age: age of the dog
- * @owner: owner of the dog
+ * struct complex- Defines the raeal and imaginary part
+ * of a complex number
+ * @re: real part of complex number
+ * @im: imaginary part of a complex number
  *
- * Description: struct dog defines variables to store data
- * from a dog, like the name of the dog, its age
- * and the name of the owner
+ * Description: struct complex defines the real part and
+ * imaginary part of a complex number, to later display
+ * this number in its binomial representation
  */
 
-typedef struct complex {
-	double re;
-	double im;
-} complex;
+typedef struct complex
+	{
+		double re;
+		double im;
+	} complex;
 
 void display_complex_number(complex c);
 
