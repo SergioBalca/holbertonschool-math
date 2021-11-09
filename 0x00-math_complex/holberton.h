@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdio.h>
+#include <math.h>
 /**
  * struct complex- Defines the raeal and imaginary part
  * of a complex number
@@ -20,5 +21,6 @@ typedef struct complex
 
 void display_complex_number(complex c);
 complex conjugate(complex c);
+double modulus(complex c);
 
 #endif /* MAIN_H */
