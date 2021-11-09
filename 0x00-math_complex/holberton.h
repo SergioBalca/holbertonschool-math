@@ -22,5 +22,6 @@ typedef struct complex
 void display_complex_number(complex c);
 complex conjugate(complex c);
 double modulus(complex c);
+void addition(complex c1, complex c2, complex *c3);
 
 #endif /* MAIN_H */
