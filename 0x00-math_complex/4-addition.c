@@ -2,9 +2,11 @@
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ * addition- performs the addition operation to complex numbers
+ * @c1: first complex number
+ * @c2: second complex number
+ * @c3: a pointer to the addition of c1 and c2
+ * Return: Nothing
  */
 
 void addition(complex c1, complex c2, complex *c3)
