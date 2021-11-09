@@ -33,7 +33,7 @@ void display_complex_number(complex c)
 			}
 			else
 			{
-				printf("%0.0f - %0.0fi\n",c.re,  c.im);
+				printf("%0.0f - %0.0fi\n",c.re,  -c.im);
 			}
 		}	
 	}
