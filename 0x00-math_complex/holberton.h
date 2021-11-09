@@ -26,5 +26,6 @@ void addition(complex c1, complex c2, complex *c3);
 void substraction(complex c1, complex c2, complex *c3);
 double argument(complex c);
 void multiplication(complex c1, complex c2, complex *c3);
+void division(complex c1, complex c2, complex *c3);
 
 #endif /* MAIN_H */
