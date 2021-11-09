@@ -10,59 +10,71 @@
 
 void division(complex c1, complex c2, complex *c3)
 {
-	complex div, c4, c5, conj;
+	double mod1, mod2, arg1, arg2, mod_result, arg_result;
+	complex div;
 
-	conj = conjugate(c2);
-	multiplication(c1, conj, &c4); /* numerator */
-	multiplication(c2, conj, &c5); /* denotinator */
-	div.re = c4.re / c5.re;
-	div.im = c4.im / c5.im;
+	mod1 = modulus(c1);
+	mod2 = modulus(c2);
+	arg1 = argument(c1);
+	arg2 = argument(c2);
+	mod_result = mod1 / mod2;
+	arg_result = arg1 - arg2;
 
+	div.re = mod_result * cos(arg_result);
+	div.im = mod_result * sin(arg_result);
 	c3->re = div.re;
 	c3->im = div.im;
 }
 
+#include "holberton.h"
+
 /**
- * multiplication- performs the multiplication operation to complex numbers
- * @c1: first complex number
- * @c2: second complex number
- * @c3: a pointer to the multiplication of c1 and c2
- * Return: Nothing
+ * modulus- returns the module of a given complex number
+ * @c: a given complex number
+ * Return: the module of the complex number c
  */
 
-void multiplication(complex c1, complex c2, complex *c3)
+double modulus(complex c)
 {
-        complex mul;
+	double mod;
 
-        mul.re = c1.re * c2.re - c1.im * c2.im;
-        mul.im = c1.re * c2.im + c1.im * c2.re;
+	mod = sqrt(pow(c.re, 2) + pow(c.im, 2));
 
-        c3->re = mul.re;
-        c3->im = mul.im;
-
+	return (mod);
 }
 
+#include "holberton.h"
+#define PI 3.14159265
 
 /**
- * conjugate- conjugates a complex number
- * @c: complex number
- * Return: the conjugate of argument c
+ * argument- returns the argument of a given complex number
+ * @c: a given complex number
+ * Return: the argument of c
  */
 
-complex conjugate(complex c)
+double argument(complex c)
 {
-        if (c.re && !c.im)
-        {
-                c.re = c.re;
-        }
-        if (!c.re && c.im)
-        {
-                c.im = -c.im;
-        }
-        if (c.re && c.im)
-        {
-                c.re = c.re;
-                c.im = -c.im;
-        }
-        return (c);
+	double arg;
+
+	if (c.re > 0 && c.im > 0) /* first quadrant*/
+	{
+		arg = atan(c.im / c.re);
+	}
+
+	if (c.re < 0 && c.im > 0) /* second quadrant */
+	{
+		arg = atan(c.im / c.re) + PI;
+	}
+
+	if (c.re < 0 && c.im < 0) /* third quadrant */
+	{
+		arg = atan(c.im / c.re) - PI;
+	}
+
+	if (c.re > 0 && c.im < 0) /* fourth quadrant */
+	{
+		arg = atan(c.im / c.re);
+	}
+
+	return (arg);
 }
