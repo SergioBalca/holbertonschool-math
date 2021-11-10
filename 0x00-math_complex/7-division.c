@@ -16,7 +16,7 @@ void division(complex c1, complex c2, complex *c3)
 	multiplication(c1, conj, &c4); /* numerator */
 	multiplication(c2, conj, &c5); /* denotinator */
 	div.re = c4.re / c5.re;
-	div.im = c4.im / c5.im;
+	div.im = c4.im / c5.re; /*c5.im = 0*/
 
 	c3->re = div.re;
 	c3->im = div.im;
@@ -32,13 +32,13 @@ void division(complex c1, complex c2, complex *c3)
 
 void multiplication(complex c1, complex c2, complex *c3)
 {
-        complex mul;
+	complex mul;
 
-        mul.re = c1.re * c2.re - c1.im * c2.im;
-        mul.im = c1.re * c2.im + c1.im * c2.re;
+	mul.re = c1.re * c2.re - c1.im * c2.im;
+	mul.im = c1.re * c2.im + c1.im * c2.re;
 
-        c3->re = mul.re;
-        c3->im = mul.im;
+	c3->re = mul.re;
+	c3->im = mul.im;
 
 }
 
@@ -51,18 +51,18 @@ void multiplication(complex c1, complex c2, complex *c3)
 
 complex conjugate(complex c)
 {
-        if (c.re && !c.im)
-        {
-                c.re = c.re;
-        }
-        if (!c.re && c.im)
-        {
-                c.im = -c.im;
-        }
-        if (c.re && c.im)
-        {
-                c.re = c.re;
-                c.im = -c.im;
-        }
-        return (c);
+	if (c.re && !c.im)
+	{
+		c.re = c.re;
+	}
+	if (!c.re && c.im)
+	{
+		c.im = -c.im;
+	}
+	if (c.re && c.im)
+	{
+		c.re = c.re;
+		c.im = -c.im;
+	}
+	return (c);
 }
