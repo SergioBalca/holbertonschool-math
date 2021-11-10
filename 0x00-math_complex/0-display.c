@@ -12,7 +12,7 @@ void display_complex_number(complex c)
 {
 	if (c.re && !c.im)
 	{
-		printf("%f\n", c.re);
+		printf("%.1f\n", c.re);
 	}
 	if (!c.re && c.im)
 	{
@@ -23,7 +23,7 @@ void display_complex_number(complex c)
 				printf("i\n");
 			}
 			else
-				printf("%fi\n", c.im);
+				printf("%.1fi\n", c.im);
 		}
 		else
 		{
@@ -33,7 +33,7 @@ void display_complex_number(complex c)
 			}
 			else
 			{
-				printf("%fi\n", c.im);
+				printf("%.1fi\n", c.im);
 			}
 		}	
 	}
@@ -43,19 +43,19 @@ void display_complex_number(complex c)
 		{
 			if (c.im == 1)
 			{
-				printf("%f + i\n", c.re);
+				printf("%.1f + i\n", c.re);
 			}
 			else
-			printf("%f + %fi\n", c.re, c.im);
+			printf("%.1f + %.1fi\n", c.re, c.im);
 		}
 		else
 		{
 			if (c.im == -1)
 			{
-				printf("%f - i\n", c.re);
+				printf("%.1f - i\n", c.re);
 			}
 			else
-			printf("%f - %fi\n", c.re, -c.im);
+			printf("%.1f - %.1fi\n", c.re, -c.im);
 
 		}
 	}
