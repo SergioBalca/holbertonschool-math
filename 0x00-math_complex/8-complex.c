@@ -12,6 +12,10 @@
 
 void complex_from_mod_arg(double m, double arg, complex *c3)
 {
-	c3->re = arg * cos(m);
-	c3->im = arg * sin(m);
+	complex c;
+
+	c.re = arg * cos(m);
+	c.im = arg * sin(m);
+	c3->re = c.re;
+	c3->im = c.im;
 }
