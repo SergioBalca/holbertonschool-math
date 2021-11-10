@@ -10,16 +10,20 @@
 
 void division(complex c1, complex c2, complex *c3)
 {
-	complex div, c4, c5, conj;
+	complex div, conj, c4, c5;
 
 	conj = conjugate(c2);
 	multiplication(c1, conj, &c4); /* numerator */
 	multiplication(c2, conj, &c5); /* denotinator */
-	div.re = c4.re / c5.re;
-	div.im = c4.im / c5.re; /*c5.im = 0*/
+	
+	if (c5.re != 0)
+	{
+		div.re = c4.re / c5.re;
+		div.im = c4.im / c5.re; /*c5.im = 0*/
 
-	c3->re = div.re;
-	c3->im = div.im;
+		c3->re = div.re;
+		c3->im = div.im;
+	}
 }
 
 /**
