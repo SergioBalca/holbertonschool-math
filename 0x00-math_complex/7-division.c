@@ -18,14 +18,13 @@ void division(complex c1, complex c2, complex *c3)
 
 	if (c2.re != 0 && c2.im != 0)
 	{
-		if (c5.re != 0)
-		{
-			div.re = c4.re / c5.re;
-			div.im = c4.im / c5.re; /*c5.im = 0*/
 
-			c3->re = div.re;
-			c3->im = div.im;
-		}
+		div.re = c4.re / c5.re;
+		div.im = c4.im / c5.re; /*c5.im = 0*/
+
+		c3->re = div.re;
+		c3->im = div.im;
+		
 	}
 }
 
