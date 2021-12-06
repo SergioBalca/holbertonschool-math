@@ -49,3 +49,4 @@ double simpson(double a, double b, int steps)
 	integration = integration * (h / 3);
 	return (integration);
 }
+
